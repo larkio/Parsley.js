@@ -1012,7 +1012,7 @@
               maxPriority = priority;
             }
           }
-		  this.UI.manageError( this.constraints[constraint] );
+		  this.UI.manageError( constraint );
         } else {
           for ( var i = 0; i < errors.length; i++ )
             this.UI.manageError( errors[ i ] );
