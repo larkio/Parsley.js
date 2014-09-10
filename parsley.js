@@ -328,9 +328,12 @@
     , formatMesssage: function ( message, args ) {
 
       if ( 'object' === typeof args ) {
-        for ( var i in args ) {
-          message = this.formatMesssage( message, args[ i ] );
-        }
+		// AE - Assumption - If it has an ID it's a backbone model, backbone models may be circular
+		if(!args.id) {
+			for ( var i in args ) {
+			  message = this.formatMesssage( message, args[ i ] );
+			}
+		}
 
         return message;
       }
